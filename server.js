@@ -48,6 +48,9 @@ hbs.registerHelper("i", function(value)
 {
     return parseInt(value) + 1;
 });
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
 
 hbs.registerHelper("diffForHumans", function(value)
 {
@@ -70,7 +73,7 @@ app.use("/",frontendRouter);
 app.use("/admin-auth",isUnAuthenticated,adminAuthRouter);
 
 //Admin
-app.use("/admin",isAuthenticated,adminRouter);
+app.use("/admin",adminRouter);
 
 
 // ROUTES

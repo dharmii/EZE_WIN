@@ -31,7 +31,7 @@ router.get('/contest-details/:id',ContestController.show);
 router.post('/store-contest',ContestController.store);
 router.post('/update-contest',ContestController.update);
 router.post('/delete-contest',ContestController.delete);
-router.get('/join-contest/:id',ContestController.join_contest);
+router.post('/contest-update-status',ContestController.update_status);
 
 router.post('/store-winning',ContestController.store_winning);
 router.post('/delete-winning',ContestController.delete_winning);

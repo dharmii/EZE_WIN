@@ -2,6 +2,8 @@ const Contest = require("../../Models/Contest.js");
 const Winning = require("../../Models/Winning.js");
 const User = require("../../Models/userModel.js");
 const Setting = require("../../Models/Setting.js");
+const Quiz = require("../../Models/Quiz.js");
+const Question = require("../../Models/Question.js");
 
 module.exports = {
 	index : async (req, res) => {
@@ -12,8 +14,10 @@ module.exports = {
 
 	show : async (req, res) => {
 		const setting = await Setting.findOne().skip(0);
-		const contest = await Contest.findById(req.params.id).populate('winnings').populate('users');
-		res.render('admin/contest/show',{contest,setting});	
+		const contest = await Contest.findById(req.params.id).populate('winnings').populate('users').populate('question');
+		const quizzes = await Quiz.find({contest:req.params.id}).populate('user');
+		const quizCount = await Quiz.find({contest:req.params.id}).countDocuments();
+		res.render('admin/contest/show',{contest,setting,quizzes,quizCount});	
 	},
 
 	store : async (req, res) => {
@@ -84,18 +88,16 @@ module.exports = {
 		res.send('Winning Deleted');
 	},
 
-	join_contest : async (req, res) => {
-		const contest = await Contest.findById(req.params.id);
-		const user = await User.findById(req.session.user._id);
-		if(user.wallet >= contest.entry_fee){
-			user.wallet = user.wallet - contest.entry_fee;
-			await user.save();
-			await contest.users.push(user);
-			contest.save();
-			res.redirect('/admin/dashboard');
-		}else{
-			res.send('Insufficient Balance');
+	update_status : async (req, res) => {
+		const contest = await Contest.findById(req.body.contest_id);
+		if(req.body.status == 'Opened'){
+			contest.status = req.body.status;
+			const count = await Question.countDocuments();
+		    const randomIndex = Math.floor(Math.random() * count);
+		    const randomQuestion = await Question.findOne().skip(randomIndex);
+		    contest.question = randomQuestion._id;
 		}
-		
+		contest.save();
+		res.redirect('back');
 	},
 }

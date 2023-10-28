@@ -115,43 +115,55 @@ module.exports = {
 		res.status(200).json({data : contests});
 	},
 
-	join_contest : async (req, res) => {
+	join_contest : async (req, res,next) => {
 		const contest = await Contest.findById(req.body.contest_id);
 		const user = await User.findById(req.user.id);
-		if(user.wallet >= contest.entry_fee){
-			user.wallet = user.wallet - contest.entry_fee;
-			await user.save();
-			await contest.users.push(user);
-			contest.save();
-			res.status(200).json({message : "Contest joined"});
+		const quiz = await Quiz.findOne({contest:req.body.contest_id,user:req.user.id});
+		if(contest.status != 'Upcoming'){
+			res.status(400).json({message : "Joining is unavailable"});
 		}else{
-			res.status(400).json({message : "Insufficient Balance, Please add cash"});
+			if(quiz){
+				res.status(400).json({message : "Contest Allready joined"});
+			}else{
+				if(user.wallet >= contest.entry_fee){
+					user.wallet = user.wallet - contest.entry_fee;
+					await user.save();
+					await contest.users.push(user);
+					const quiz = await new Quiz();
+					quiz.contest = contest._id;
+					quiz.user = req.user.id;
+					await quiz.save();
+					await contest.quizzes.push(quiz);
+					await contest.save();
+					res.status(200).json({message : "Contest joined"});
+				}else{
+					res.status(400).json({message : "Insufficient Balance, Please add cash"});
+				}
+			}
 		}
+		
 	},
 	open_quiz : async (req, res) => {
 		const contest = await Contest.findById(req.body.contest_id).populate('question').populate('winnings').populate('quizzes').populate('users');
-		res.status(200).json({data:contest});
+		const quizExists = await Quiz.findOne({contest:req.body.contest_id,user:req.user.id}).populate('user');
+		res.status(200).json({contest,quizExists});
 	},
 	save_answer : async (req, res) => {
 		const contest = await Contest.findById(req.body.contest_id);
-		const quizExists = await Quiz.findOne({contest:req.body.contest_id,user:req.user.id});
-		if(quizExists){
+		const quiz = await Quiz.findOne({contest:req.body.contest_id,user:req.user.id});
+		if(quiz.answered_option != ''){
 			res.status(400).json({message : "Answer allready saved"});
 		}else{
-			const quiz = await new Quiz();
-			quiz.contest = contest._id;
-			quiz.user = req.user.id;
 			quiz.answered_option = req.body.answered_option;
 			await quiz.save();
-			await contest.quizzes.push(quiz);
-			await contest.save();
 			res.status(200).json({message : "Answer Saved,Please wait for result"});
 		}
 	},
 
 	quiz_details : async (req, res) => {
-		const contest = await Contest.findById(req.body.contest_id).populate('question').populate('winnings').populate('users').populate('quizzes');
-		res.status(200).json({data : contest});
+		const contest = await Contest.findById(req.body.contest_id).populate('question').populate('winnings').populate('quizzes').populate('users');
+		const quizExists = await Quiz.findOne({contest:req.body.contest_id,user:req.user.id}).populate('user');
+		res.status(200).json({contest,quizExists});
 	},
 	my_contests : async (req, res) => {
 		const contests = await Contest.find();
