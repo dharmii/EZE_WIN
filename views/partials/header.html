@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title</title>
-  <link rel="shortcut icon" href="">
-  <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- DataTables -->
   <link rel="stylesheet" href="/admin/css/dataTables.bootstrap4.min.css">
@@ -13,16 +11,285 @@
   <link rel="stylesheet" href="/admin/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Select2 -->
-  <!--<link rel="stylesheet" href="/admin/plugins/select2/css/select2.min.css">-->
-  <!--<link rel="stylesheet" href="/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <!-- Theme style -->
   <link rel="stylesheet" href="/admin/css/adminlte.min.css">
-  <link rel="stylesheet" href="/admin/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    /* body{
+      background : linear-gradient(to right, #FFC436 ,#CD5C08, black);;
+    } */
+    body{
+      background: linear-gradient(to right, #eca93f 0% , #1e0901 100%);
+      font-family:'jost',sans-serif;
+    }
+    span:active {
+    background-color: darkred; /* Change the color for active buttons */
+  }
+
+    div.container{
+      text-align: center;
+    }
+    span.text{
+      color:white;
+      font-size: 20px;
+    }
+    span:hover{
+      color:orangered;
+    }
+    i.icon{
+      color:white;
+    }
+    .nav-item {
+      display: flex; 
+      align-items: center; 
+    }
+    .dashboard-icon {
+      margin-right: 20px; 
+      margin-bottom: 45px; 
+    }
+    .profile-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .users-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .question-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .contest-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .settings-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .nav-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .text {
+    margin: 0; /* Remove any default margin on the text */
+    }
+
+     
+.custom-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    outline: none;
+}
+
+.color-indicator {
+    width: 100px;
+    height: 20px;
+    margin-top: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+
+
+    .brand-link{
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="brand-link">
+  </a>  
+  <div class="container">
+      <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="75px" width="75px">
+      </a>
+  </div>
+  <div class="grid-container">
+  <div>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+             <li class="nav-item" style="list-style-type:none;">
+              <a href="dashboard.html" class="nav-link" class="sidebar-button" style="text-decoration: none;">
+                <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+            </li>
+
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="profile.html" style="text-decoration: none;" class="nav-link">
+                <i class="profile-icon fas fa-user-circle icon"></i><span class="text">Profile</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="users/index.html" style="text-decoration: none;" class="nav-link">
+               <i class="users-icon fas fa-users icon"></i>
+               <span class="text">Users</span>
+             </a>
+           </li>
+  
+             <li class="nav-item" style="list-style-type:none;">
+              <a href="question/index.html" style="text-decoration: none;" class="nav-link">
+                <i class="question-icon fas fa-question-circle icon"></i>
+                <span class="text">Question</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type: none;">
+              <a href="contest.html" style="text-decoration: none;" class="nav-link">
+                <i class="contest-icon fas fa-trophy icon"></i>
+                <span class="text">Contest</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="settings.html" style="text-decoration: none;" class="nav-link">
+                <i class="settings-icon fas fa-cog icon"></i>
+                <span class="text">Settings</span>
+              </a>
+            </li>
+  
+           
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="logout.html" style="text-decoration: none;" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt icon"></i>
+                <span class="text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+  </aside>
+  </div>
+
+<script>
+  // Get all the buttons and the color indicator
+const buttons = document.querySelectorAll(".custom-button");
+const colorIndicator = document.querySelector(".color-indicator");
+
+// Initialize the currently active button
+let activeButton = null;
+
+// Add a click event listener to each button
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Remove the active class from the previously active button
+        if (activeButton) {
+            activeButton.classList.remove("active");
+        }
+
+        // Set the currently active button and add the active class
+        activeButton = button;
+        activeButton.classList.add("active");
+
+        // Change the color indicator's background to the active button's background color
+        colorIndicator.style.backgroundColor = getComputedStyle(button).backgroundColor;
+    });
+});
+
+</script>
+
+</body>
+</html>
+<!-- <body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    
+    <div class="container">
+      <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="50px" width="50px">
+    </a>
+    </div>
+
+    <div class="sidebar">
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+         
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="dashboard.html" class="nav-link" style="text-decoration: none;">
+              <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="profile.html" style="text-decoration: none;" class="nav-link">
+              <i class="profile-icon fas fa-user-circle icon"></i>
+              <span class="text">Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+             <a href="users/index.html" style="text-decoration: none;" class="nav-link">
+              <i class="users-icon fas fa-users icon"></i>
+              <span class="text">Users</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="question/index.html" style="text-decoration: none;" class="nav-link">
+              <i class="question-icon fas fa-question-circle icon"></i>
+              <span class="text">Question</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type: none;">
+            <a href="contest.html" style="text-decoration: none;" class="nav-link">
+              <i class="contest-icon fas fa-trophy icon"></i>
+              <span class="text">Contest</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="settings.html" style="text-decoration: none;" class="nav-link">
+              <i class="settings-icon fas fa-cog icon"></i>
+              <span class="text">Settings</span>
+            </a>
+          </li> -->
+          
+          <!-- <li class="nav-item" style="list-style-type:none;">
+            <a href="logout.html" class="nav-link" style="text-decoration: none;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="nav-icon fas fa-sign-out-alt icon"></i>
+              <span class="text">Logout</span>
+            </a> -->
+
+            <!-- <li class="nav-item" style="list-style-type:none;">
+              <a href="logout.html" style="text-decoration: none;" class="nav-link">
+                <i class="fas fa-sign-out-alt icon"></i>
+                <span class="text">Logout</span>
+              </a>
+            </li>
+
+            <form id="logout-form" action="logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="">
+            </form>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
+    </aside> -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <!-- <div class="content-wrapper"> -->
+
+
+
+
+    <!-- @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     tfoot{display:none;}
     .btn-primary{background-color:black;}
     .btn-primary:hover{background-color:white;color:black;}
@@ -32,12 +299,19 @@
       background-color: black;
       border-color: #007bff;
     }
+    div.container{
+      text-align: center;
+    }
     .page-item .page-link {
       color: black;
     }
+    /* .nav-sidebar .nav-item:hover .nav-link {
+      background-color: transparent; 
+      color: white; 
+    } */
     .active-tab{
-        background-color: black;
-        color: white;
+      background-color: black;
+      color: white;
     }
     .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
       color: #fff;
@@ -60,8 +334,9 @@
         border-radius:0px;
     }
     [class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link, [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
-        background-color: black;
-        color: #fff;
+       background-color: black;
+       color:white;
+       
     }
     .sidebar{padding-top:2px;padding-bottom:30px;}
     .card-header {
@@ -76,84 +351,14 @@
     .btn-success{background-color:black;color:white;}
     .btn-success:hover{background-color:white;color:black;border-color:black;}
     .humburger-menu:hover{color:white !important;}
-  </style>
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<!-- Site wrapper -->
-<div class="wrapper">
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+    .sidebar{
+      background-color:orangered;
+    }
+    .container{
+      background-color: black;
+    } -->
+
+
+
     
-    <a href="/">
-        <img src="{{setting.logo_path}}" alt="AdminLTE Logo" class="brand-image" style="width:100%;">
-    </a>
-    <!-- Sidebar -->
-    <div class="sidebar">
-
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-         
-          <li class="nav-item">
-            <a href="/admin/dashboard" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/admin/profile" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Profile</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/admin/user" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Users</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/admin/question" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Question</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/admin/contest" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Contest</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/admin/setting" class="nav-link">
-              <i class="nav-icon fa fa-bar-chart"></i>
-              <p>Setting</p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="/logout" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-              <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p>Logout</p>
-            </a>
-
-            <form id="logout-form" action="logout" method="POST" style="display: none;">
-                <input type="hidden" name="_token" value="">
-            </form>
-
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
