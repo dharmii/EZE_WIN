@@ -37,7 +37,13 @@
                     <b>Max Members</b> <a class="float-right">{{contest.max_members}}</a>
                   </li>
                   <li class="list-group-item">
+                    <b>Joined Members</b> <a class="float-right">{{quizCount}}</a>
+                  </li>
+                  <li class="list-group-item">
                     <b>Starts at</b> <a class="float-right">{{diffForHumans contest.starts_at}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Status</b> <a class="float-right">{{contest.status}}</a>
                   </li>
                 </ul>
                 
@@ -54,6 +60,8 @@
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#winners" data-toggle="tab">Winnings</a></li>
                   <li class="nav-item"><a class="nav-link" href="#members" data-toggle="tab">Members</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#quiz" data-toggle="tab">Quiz</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#action" data-toggle="tab">Action</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -110,6 +118,54 @@
                           {{/each}}
                           </tbody>
                         </table>
+                      </div>
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="quiz">
+                      <div class="table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>S No</th>
+                            <th>Name</th>
+                            <th>Answered Option</th>
+                            <th>Right Option</th>
+                            <th>Time</th>
+                          </tr>
+                          </thead>
+                          <tbody class="test">
+                          {{#each quizzes}}
+                          <tr>
+                            <td>{{i @index}}</td>
+                            <td>{{this.user.Name}}</td>
+                            <td>{{this.answered_otion}}</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          {{/each}}
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="action">
+                      <div class="row">
+                        <div class="col-md-12">
+                            <p>Maximum Members : {{contest.max_members}}</p>
+                            <p>Joined Members : {{quizCount}}</p>
+                            <p>Status : {{contest.status}}</p>
+                            <p>Question: {{contest.question.name}}</p>
+                            {{#ifEquals contest.status "Upcoming"}}
+                                <p class="text-danger">Note: Start contest will assign a question to this this contest reandomly, and Contest will start to play</p>
+                            <form action="/admin/contest-update-status" method="post">
+                              <input type="hidden" name="contest_id" value="{{contest._id}}">
+                              <input type="hidden" name="status" value="Opened">
+                              <input type="submit" class="btn btn-primary" value="Start Contest">
+                            </form>
+                            {{/ifEquals}}
+                        </div>
                       </div>
                   </div>
                   <!-- /.tab-pane -->

@@ -39,6 +39,7 @@
                     <th>Entry</th>
                     <th>Members</th>
                     <th>Starting</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -50,6 +51,7 @@
                     <td>{{this.entry_fee}}</td>
                     <td>{{this.max_members}}</td>
                     <td>{{diffForHumans this.starts_at}}</td>
+                    <td>{{this.status}}</td>
                     <td>
                       <a href="/admin/contest-details/{{this._id}}" target="_blank"  class="btn btn-sm btn-warning"><i class="fa fa-eye"></i></a>
 
