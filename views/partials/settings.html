@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="">
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/admin/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Select2 -->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2/css/select2.min.css">-->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">-->
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/admin/css/adminlte.min.css">
+  <link rel="stylesheet" href="/admin/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+  
+
+
+
+
+</head>
+<style>
+ body{
+  background: linear-gradient(to right, #eca93f 0% , #1e0901 100%);
+  font-family: 'Jost', sans-serif;
+
+    }
+    div.container{
+      text-align: center;
+    }
+    span.text{
+      color:white;
+      font-size: 20px;
+    }
+    span:hover{
+      color:orangered;
+    }
+    i.icon{
+      color:white;
+    }
+    .nav-item {
+      display: flex; 
+      align-items: center; 
+    }
+    .dashboard-icon {
+      margin-right: 20px; 
+      margin-bottom: 45px; 
+    }
+    .profile-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .users-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .question-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .contest-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .settings-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .nav-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .text {
+    margin: 0; 
+    }
+
+    .grid-container{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 25% 75%;
+    }
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+.button:hover{
+    color: green;
+}
+.button{
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+</style>
+<body>
+    <!-- {{> header}} -->
+    <!-- <h1>Setting Page</h1> -->
+    <!-- {{> footer}} !-->
+
+    <a href="#" class="brand-link">
+    </a>  
+    <div class="container">
+        <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="75px" width="75px">
+        </a>
+    </div>
+    <div class="grid-container">
+    <div>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+               <li class="nav-item" style="list-style-type:none;">
+                <a href="dashboard.html" class="nav-link" style="text-decoration: none;">
+                  <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="profile.html" style="text-decoration: none;" class="nav-link">
+                  <i class="profile-icon fas fa-user-circle icon"></i><span class="text">Profile</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="users/index.html" style="text-decoration: none;" class="nav-link">
+                 <i class="users-icon fas fa-users icon"></i>
+                 <span class="text">Users</span>
+               </a>
+             </li>
+    
+               <li class="nav-item" style="list-style-type:none;">
+                <a href="question/index.html" style="text-decoration: none;" class="nav-link">
+                  <i class="question-icon fas fa-question-circle icon"></i>
+                  <span class="text">Question</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type: none;">
+                <a href="contest.html" style="text-decoration: none;" class="nav-link">
+                  <i class="contest-icon fas fa-trophy icon"></i>
+                  <span class="text">Contest</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="settings.html" style="text-decoration: none;" class="nav-link">
+                  <i class="settings-icon fas fa-cog icon"></i>
+                  <span class="text">Settings</span>
+                </a>
+              </li>
+    
+             
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="logout.html" style="text-decoration: none;" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt icon"></i>
+                  <span class="text">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </aside>
+    </div>
+
+   <div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <header>
+                <h1>Settings</h1>
+            </header>
+        
+        
+        
+            <main>
+                <section class="profile-settings">
+                    <h2>Profile Settings</h2>
+                    <form>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+        
+                        <label for="avatar">Profile Picture</label>
+                        <input type="file" id="avatar" name="avatar">
+                    </form>
+                </section>
+            </main>
+            <div class="button">
+                <button class="btn btn-success" id="submit-button">Submit</button>
+            </div>
+        </div>
+    </section>
+   </div>
+    <!-- <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Your changes have been saved.</p>
+        </div>
+    </div> -->
+</body>
+<script>
+//     document.addEventListener("DOMContentLoaded", function() {
+//     const submitButton = document.querySelector(".button");
+//     const confirmationModal = document.getElementById("confirmation-modal");
+//     const closeButton = document.querySelector(".close");
+
+//     submitButton.addEventListener("click", function() {
+//         confirmationModal.style.display = "block";
+//     });
+
+//     closeButton.addEventListener("click", function() {
+//         confirmationModal.style.display = "none";
+//     });
+
+//     window.addEventListener("click", function(event) {
+//         if (event.target === confirmationModal) {
+//             confirmationModal.style.display = "none";
+//         }
+//     });
+// });
+document.addEventListener("DOMContentLoaded", function() {
+            const submitButton = document.getElementById("submit-button");
+
+            submitButton.addEventListener("click", function() {
+                alert("Your changes have been saved.");
+            });
+        });
+
+
+</script>
+</html>
