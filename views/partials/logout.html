@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="">
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/admin/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Select2 -->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2/css/select2.min.css">-->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">-->
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/admin/css/adminlte.min.css">
+  <link rel="stylesheet" href="/admin/css/style.css">
+</head>
+<style>
+    body{
+      background: linear-gradient(to right, #eca93f 0% , #1e0901 100%);
+      font-family: 'Jost', sans-serif;
+
+    }
+    div.container{
+      text-align: center;
+    }
+    span.text{
+      color:white;
+      font-size: 20px;
+    }
+    span:hover{
+      color:orangered;
+    }
+    i.icon{
+      color:white;
+    }
+    .nav-item {
+      display: flex; 
+      align-items: center; 
+    }
+    .dashboard-icon {
+      margin-right: 20px; 
+      margin-bottom: 45px; 
+    }
+    .profile-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .users-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .question-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .contest-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .settings-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .nav-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .text {
+    margin: 0; 
+    }
+
+    .container{
+        padding:10px;
+        margin:10px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .grid-container{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 25% 75%;
+    }
+
+
+
+</style>
+<body>
+    <a href="#" class="brand-link">
+    </a>  
+    <div class="container">
+        <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="75px" width="75px">
+        </a>
+    </div>
+    <div class="grid-container">
+    <div>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+               <li class="nav-item" style="list-style-type:none;">
+                <a href="dashboard.html" class="nav-link" style="text-decoration: none;">
+                  <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="profile.html" style="text-decoration: none;" class="nav-link">
+                  <i class="profile-icon fas fa-user-circle icon"></i><span class="text">Profile</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="users/index.html" style="text-decoration: none;" class="nav-link">
+                 <i class="users-icon fas fa-users icon"></i>
+                 <span class="text">Users</span>
+               </a>
+             </li>
+    
+               <li class="nav-item" style="list-style-type:none;">
+                <a href="question/index.html" style="text-decoration: none;" class="nav-link">
+                  <i class="question-icon fas fa-question-circle icon"></i>
+                  <span class="text">Question</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type: none;">
+                <a href="contest.html" style="text-decoration: none;" class="nav-link">
+                  <i class="contest-icon fas fa-trophy icon"></i>
+                  <span class="text">Contest</span>
+                </a>
+              </li>
+    
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="settings.html" style="text-decoration: none;" class="nav-link">
+                  <i class="settings-icon fas fa-cog icon"></i>
+                  <span class="text">Settings</span>
+                </a>
+              </li>
+    
+             
+              <li class="nav-item" style="list-style-type:none;">
+                <a href="logout.html" style="text-decoration: none;" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt icon"></i>
+                  <span class="text">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </aside>
+</div>
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="container">
+                <button class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
