@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/admin/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Theme style -->
+  <!-- <link rel="stylesheet" href="/admin/css/adminlte.min.css">
+  <link rel="stylesheet" href="/admin/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+  <!-- Add jQuery -->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+  <!-- Add Bootstrap JavaScript -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+  
+
+
+</head>
+<style>
+     body{
+      background: linear-gradient(to right, #eca93f 0% , #1e0901 100%);
+      font-family: 'Jost', sans-serif;
+
+    }
+    div.container{
+      text-align: center;
+    }
+    span.text{
+      color:white;
+      font-size: 20px;
+    }
+    span:hover{
+      color:orangered;
+    }
+    i.icon{
+      color:white;
+    }
+    .nav-item {
+      display: flex; 
+      align-items: center; 
+    }
+    .dashboard-icon {
+      margin-right: 20px; 
+      margin-bottom: 45px; 
+    }
+    .profile-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .users-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .question-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .contest-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .settings-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .nav-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .text {
+    margin: 0; 
+    }
+
+
+    .grid-container{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 25% 75%;
+    }
+
+    body {
+    font-family: "Questrial" !important;
+    background-color:black;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+    width: 420px !important;
+    margin: 0 auto;
+}
+
+.signup {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 10px 50px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h5 {
+    margin-bottom: 3px;
+}
+
+small {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+input {
+    width: 100%;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.075);
+    letter-spacing: 1px;
+}
+
+.text-left {
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+}
+
+.text-right {
+    color: #ff0147;
+    font-weight: bold;
+}
+
+span.text-center {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.fab {
+    padding: 15px;
+    font-size: 23px;
+}
+
+.fa-facebook {
+    color: #0303d9bf;
+}
+
+.fa-twitter {
+    color: #0078fade;
+}
+
+.fa-linkedin {
+    color: #18b1c0;
+}
+
+/* for mobile number */
+
+.input-group-addon {
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.mobile {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    display: table-cell;
+    padding: 6px 0px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid white;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    letter-spacing: 3px;
+}
+
+.prefix input {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.prefix .input-group-addon {
+    border-right: 0;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.input-group-addon.prefix {
+    border-radius: 4px 0px 0px 4px;
+    border-right: 0;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+</style>
+<body>
+    
+<!-- {{> header}} -->
+<a href="#" class="brand-link">
+</a>  
+<div class="container">
+    <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="75px" width="75px">
+    </a>
+</div>
+<div class="grid-container">
+<div>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+           <li class="nav-item" style="list-style-type:none;">
+            <a href="dashboard.html" class="nav-link" style="text-decoration: none;">
+              <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="profile.html" style="text-decoration: none;" class="nav-link">
+              <i class="profile-icon fas fa-user-circle icon"></i><span class="text">Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="users.html" style="text-decoration: none;" class="nav-link">
+             <i class="users-icon fas fa-users icon"></i>
+             <span class="text">Users</span>
+           </a>
+         </li>
+
+           <li class="nav-item" style="list-style-type:none;">
+            <a href="question.html" style="text-decoration: none;" class="nav-link">
+              <i class="question-icon fas fa-question-circle icon"></i>
+              <span class="text">Question</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type: none;">
+            <a href="contest.html" style="text-decoration: none;" class="nav-link">
+              <i class="contest-icon fas fa-trophy icon"></i>
+              <span class="text">Contest</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="settings.html" style="text-decoration: none;" class="nav-link">
+              <i class="settings-icon fas fa-cog icon"></i>
+              <span class="text">Settings</span>
+            </a>
+          </li>
+
+         
+          <li class="nav-item" style="list-style-type:none;">
+            <a href="logout.html" style="text-decoration: none;" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt icon"></i>
+              <span class="text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+</aside>
+</div>
+
+
+
+   <div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 style="color:white">Questions</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#" style="color:white">1.Home</a></li>
+                <li class="breadcrumb-item active" style="color:white">Questions</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <div class="content-wrapper" style="position: relative;">
+        <div class="button-wrapper" style="position: absolute; top: 5px; right: 10px;">
+            <br>
+            <button type="button" class="btn btn-dark" onClick="toggleForm()"> Add Customer</button>
+        </div>
+      </div>
+
+    
+<!-- The modal -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color:white"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="/admin/store-question" method="post" class="add-form" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="error"></div>
+                                <div class="form-group">
+                                    <label for="name" class="col-form-label" style="color: white;">Name:</label>
+                                    <input type="text" name="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class="col-form-label" style="color: white;">Question : what is your favourite game ?</label>
+                                    <input type="text" name="name" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="option_A" class="col-form-label" style="color: white;">Option A: Football</label>
+                                    <input type="text" name="option_A" class="form-control" id="option_A">
+                                </div>
+                                <div class="form-group">
+                                    <label for="option_B" class="col-form-label" style="color: white;">Option B: Volleyball</label>
+                                    <input type="text" name="option_B" class="form-control" id="option_B">
+                                </div>
+                                <div class="form-group">
+                                    <label for="option_C" class="col-form-label" style="color: white;">Option C: Cricket</label>
+                                    <input type="text" name="option_C" class="form-control" id="option_C">
+                                </div>
+                                <div class="form-group">
+                                    <label for="option_D" class="col-form-label" style="color: white;">Option D: Chess</label>
+                                    <input type="text" name="option_D" class="form-control" id="option_D">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role" class="col-form-label" style="color: white;">Answer:</label>
+                                    <br>
+                                    <select name="answer" class="form-control" id="answer">
+                                        <option value="option_A" style="color: white;">Option A</option>
+                                        <option value="option_B" style="color: white;">Option B</option>
+                                        <option value="option_C" style="color: white;">Option C</option>
+                                        <option value="option_D" style="color: white;">Option D</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="video" class="col-form-label" style="color: white;">Video:<a href="" id="video"></a>
+                                    <br>
+                                    <input type="file" name="file" accept="video/*" class="form-control video" required>
+                                </div>
+                                <input type="hidden" name="id" id="edit-id">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="save-button">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel" style="color: white;">Are you sure ?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text" style="color: white;">You are going to permanently delete this item..</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal" id="delete-button">Confirm Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               </div>
+            </div> -->
+        </div>
+    </section>
+</div>
+
+   <!-- <div class="content-wrapper">
+     <section class="content-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-10">
+  
+              <div class="card">
+                <div class="card-header">
+                  <button class="btn btn-sm btn-success right" data-toggle="modal" data-target="#addModal">Add New Question</button>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                      <th>S No</th>
+                      <th>Name</th>
+                      <th>Option A</th>
+                      <th>Option B</th>
+                      <th>Option C</th>
+                      <th>Option D</th>
+                      <th>Answer</th>
+                      <th>Video</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>{{@index}}</td>
+                      <td>{this.name}</td>
+                      <td>{{this.option_A}}</td>
+                      <td>{{this.option_B}}</td>
+                      <td>{{this.option_C}}</td>
+                      <td>{{this.option_D}}</td>
+                      <td>{{this.answer}}</td>
+                      <td>{{this.video}}</td>
+                      <td>
+                          <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal" data-id="{{this._id}}" data-name="{{this.name}}" data-option-a="{{this.option_A}}" data-option-b="{{this.option_B}}" data-option-c="{{this.option_C}}" data-option-d="{{this.option_D}}" data-answer="{{this.answer}}" data-video="{{this.video}}">
+                            <i class="fa fa-edit"></i>
+                        </button>
+  
+                          <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="{{this._id}}" data-action="delete"><i class="fa fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section> -->
+  
+  <!-- <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Add Customer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="/admin/store-question" method="post" class="add-form" enctype="multipart/form-data">
+          <div class="modal-body">
+            <div class="error"></div>
+            <div class="form-group">
+              <label for="name" class="col-form-label">Name:</label>
+              <input type="text" name="name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="option_A" class="col-form-label">Option A:</label>
+              <input type="text" name="option_A" class="form-control" id="option_A">
+            </div>
+            <div class="form-group">
+              <label for="option_B" class="col-form-label">Option B:</label>
+              <input type="text" name="option_B" class="form-control" id="option_B">
+            </div>
+            <div class="form-group">
+              <label for="option_C" class="col-form-label">Option C:</label>
+              <input type="text" name="option_C" class="form-control" id="option_C">
+            </div>
+            <div class="form-group">
+              <label for="option_D" class="col-form-label">Option D:</label>
+              <input type="text" name="option_D" class="form-control" id="option_D">
+            </div>
+            <div class="form-group">
+              <label for="role" class="col-form-label">Answer:</label>
+              <select name="answer" class="form-control" id="answer">
+                <option value="option_A">Option A</option>
+                <option value="option_B">Option B</option>
+                <option value="option_C">Option C</option>
+                <option value="option_D">Option D</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="video" class="col-form-label">Video:<a href="" id="video"></a>
+              <input type="file" name="file" accept="video/*" class="form-control video" required>
+            </div>
+            <input type="hidden" name="id" id="edit-id">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="save-button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   -->
+
+<!-- {{> footer}} -->
+<!-- //   $(document).ready(function(){
+//     var id = '';
+//     var action = '';
+    
+//     $('#deleteModal').on('show.bs.modal', function (event) {
+//       var button = $(event.relatedTarget);
+//       id = button.data('id');
+//       $('#delete-id').val(id);
+//       action= button.data('action');
+//       $('#delete-button').removeClass('btn-success');
+//       $('#delete-button').removeClass('btn-danger');
+//       if(action == 'delete'){
+//           $('#delete-button').addClass('btn-danger');
+//           $('#delete-button').text('Confirm Delete');
+//           $('.text').text('You are going to permanently delete this item..');
+//       }else{
+//           $('#delete-button').addClass('btn-success');
+//           $('#delete-button').text('Confirm Restore');
+//           $('.text').text('You are going to restore this item..');
+//       }
+//     });
+
+//     $(document).on('click','#delete-button',function(){
+//       var url = "/admin/delete-question";
+//       $.ajax({
+//         url : url,
+//         type: "POST",
+//         data : {'id':id,'action':action},
+//         success: function(data)
+//         {
+//           window.location.reload();
+//         }
+//       });
+//     });
+
+//     $('#addModal').on('show.bs.modal', function (event) {
+//       var button = $(event.relatedTarget);
+//       $('#edit-id').val(button.data('id'));
+//       $('#name').val(button.data('name'));
+//       $('#option_A').val(button.data('option-a'));
+//       $('#option_B').val(button.data('option-b'));
+//       $('#option_C').val(button.data('option-c'));
+//       $('#option_D').val(button.data('option-d'));
+//       $('#answer').val(button.data('answer'));
+//       $('#video').attr('href',button.data('video'));
+//       $('#video').text(button.data(''));
+//       $('#video').text(button.data('video'));
+//       $("#form").prop('action','/admin/store-question');
+//       if(button.data('id') != null){
+//           $(".video").prop('required',false);
+//           $(".add-form").prop('action','/admin/update-question');
+//       }
+//     });
+
+//   }); -->
+
+<script>
+    function toggleForm() {
+        $('#addModal').modal('show');
+    }
+
+</script>
+</body>
+</html>
+
+
+
