@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="">
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/admin/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Select2 -->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2/css/select2.min.css">-->
+  <!--<link rel="stylesheet" href="/admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">-->
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/admin/css/adminlte.min.css">
+  <link rel="stylesheet" href="/admin/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+  
+  
+</head>
+
+<style>
+   body{
+    background: linear-gradient(to right, #eca93f 0% , #1e0901 100%);
+    font-family: 'Jost', sans-serif;
+
+    }
+    div.container{
+      text-align: center;
+    }
+    span.text{
+      color:white;
+      font-size: 20px;
+    }
+    span:hover{
+      color:orangered;
+    }
+    i.icon{
+      color:white;
+    }
+    .nav-item {
+      display: flex; 
+      align-items: center; 
+    }
+    .dashboard-icon {
+      margin-right: 20px; 
+      margin-bottom: 45px; 
+    }
+    .profile-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .users-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .question-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .contest-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .settings-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .nav-icon{
+      margin-bottom: 45px;
+      margin-right: 20px;
+    }
+    .text {
+    margin: 0; 
+    }
+
+
+
+
+
+
+    .grid-container{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 25% 75%;
+    }
+
+
+
+    body {
+        font-family: "Questrial" !important;
+        background-color:black;
+    }
+    .card {
+        border: none;
+        border-radius: 0;
+        width: 420px !important;
+        margin: 0 auto;
+    }
+    .signup {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 10px 50px;
+    }
+    a {
+        text-decoration: none !important;
+    }
+    h5 {
+        margin-bottom: 3px;
+    }
+    small {
+        color: white;
+    }
+    input {
+        width: 100%;
+        display: block;
+        margin-bottom: 7px;
+    }
+
+    .form-control {
+        border: 1px solid #dca101;
+        border-radius: 30px;
+        /* background-color: rgba(0, 0, 0, 0.075); */
+        background: linear-gradient(#FFC436 ,#CD5C08, black);
+        letter-spacing: 1px;
+    }
+    .text-left {
+        color:white;
+        font-weight: 400;
+    }
+    .text-right {
+        color:white;
+        font-weight: bold;
+    }
+
+    span.text-center {
+        color: white;
+    }
+
+    .fab {
+        padding: 15px;
+        font-size: 23px;
+    }
+    .fa-facebook {
+      color: #0078df11;
+    }
+
+    .fa-twitter {
+        color: #0078fade;
+    }
+
+    .fa-linkedin {
+        color: #18b1c0;
+    }
+
+/* for mobile number */
+
+.input-group-addon {
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.mobile {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    display: table-cell;
+    padding: 6px 0px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid white;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    letter-spacing: 3px;
+}
+
+.prefix input {
+    border-radius: 0px 4px 4px 0px;
+}
+
+.prefix .input-group-addon {
+    border-right: 0;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.input-group-addon.prefix {
+    border-radius: 4px 0px 0px 4px;
+    border-right: 0;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* 
+input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+
+</style>
+<body>
+  <a href="#" class="brand-link">
+  </a>  
+  <div class="container">
+      <a href="/"><img src="Logo4.png" alt="AdminLTE Logo"  class="brand-image" style="background-color: black;" height="75px" width="75px">
+      </a>
+  </div>
+  <div class="grid-container">
+  <div>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+             <li class="nav-item" style="list-style-type:none;">
+              <a href="dashboard.html" class="nav-link" style="text-decoration: none;">
+                <i class="dashboard-icon fas fa-chart-line icon"></i><span class="text">Dashboard</span></a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="profile.html" style="text-decoration: none;" class="nav-link">
+                <i class="profile-icon fas fa-user-circle icon"></i><span class="text">Profile</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="users/index.html" style="text-decoration: none;" class="nav-link">
+               <i class="users-icon fas fa-users icon"></i>
+               <span class="text">Users</span>
+             </a>
+           </li>
+  
+             <li class="nav-item" style="list-style-type:none;">
+              <a href="question/index.html" style="text-decoration: none;" class="nav-link">
+                <i class="question-icon fas fa-question-circle icon"></i>
+                <span class="text">Question</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type: none;">
+              <a href="contest.html" style="text-decoration: none;" class="nav-link">
+                <i class="contest-icon fas fa-trophy icon"></i>
+                <span class="text">Contest</span>
+              </a>
+            </li>
+  
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="settings.html" style="text-decoration: none;" class="nav-link">
+                <i class="settings-icon fas fa-cog icon"></i>
+                <span class="text">Settings</span>
+              </a>
+            </li>
+  
+           
+            <li class="nav-item" style="list-style-type:none;">
+              <a href="logout.html" style="text-decoration: none;" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt icon"></i>
+                <span class="text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+  </aside>
+  </div>
+
+
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-1">
+            <h1 style="color:white">Customer Details</h1>
+          </div>
+          <div class="col-sm-1">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#" style="color:white"><a style="color:white;">1.Home</a></li>
+              <li class="breadcrumb-item active" style="color:white">Customer Details</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+   <div class="content-wrapper">
+     <!-- Main content -->
+     <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img style="color:white;" class="profile-user-img img-fluid img-circle" src="" alt="User profile picture">
+                </div>
+                <h3 class="profile-username text-center" style="color:white;">John</h3>
+
+                <p class="text-muted text-center" style="color:white;">Web developer</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b style="color:white;">Email</b> <a class="float-right" style="color:white;">john@gmail.com</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b style="color:white;">Phone</b> <a class="float-right" style="color:white;">7995176138</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b style="color:white;">Gender</b> <a class="float-right" style="color:white;">Male</a>
+                  </li>
+
+                  <li class="list-group-item">
+                    <b style="color:white;">Address</b> <a class="float-right" style="color:white;">Hyderabad</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b style="color:white;">Status</b> <a class="float-right" style="color:white;">Working</a> 
+                  </li>
+                </ul>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link active" href="#basic" data-toggle="tab" style="color:white;">Basic Info</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="basic">
+                        <!-- {{#if sessionFlash.message}} -->
+                            <div class="alert alert-danger">
+                                  <!-- {{{sessionFlash.message}}} -->
+                            </div>
+                       <!-- {{/if}} -->
+                    <form class="form-horizontal" action="admin/update-profile" method="post" enctype="multipart/form-data">
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label" style="color:white;">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="name" value="{{customer.name}}" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label" style="color:white;">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" name="email" value="{{customer.email}}" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label" style="color:white;">Phone</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="phone" value="{{customer.phone}}" minlength="10" maxlength="10" 
+                          onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label" style="color:white;">Gender</label>
+                        <div class="col-sm-10">
+                          <select name="gender" class="form-control">
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label" style="color:white;">Address</label>
+                        <div class="col-sm-10">
+                          <textarea name="address" class="form-control" required>{{customer.address}}</textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputSkills" class="col-sm-2 col-form-label" style="color:white;">Profile Image
+                            <img src="" style="width:40px">
+                        </label>
+                        <div class="col-sm-10">
+                          <input type="file" class="form-control" name="profile_pic" placeholder="Profile Picture">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="submit" class="btn btn-danger">Save</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+      </section>
+  </div>
+  </div>
+   </div>
+    <!-- /.content -->
+
+
+<!-- {{> footer}} -->
+
+</body>
+</html>
